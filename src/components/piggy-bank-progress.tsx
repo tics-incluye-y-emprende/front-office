@@ -2,10 +2,11 @@
 "use client";
 
 import type { FC } from 'react';
+import { useState, useEffect } from 'react'; // Added useState and useEffect
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { APOYA_PAGE_CONTENT } from '@/lib/constants'; // Assuming savings data is here
+import { APOYA_PAGE_CONTENT } from '@/lib/constants';
 import { PiggyBank, Target, PartyPopper } from 'lucide-react';
 
 interface PiggyBankProgressProps {
@@ -22,6 +23,15 @@ const PiggyBankProgress: FC<PiggyBankProgressProps> = ({
   const { savings } = APOYA_PAGE_CONTENT;
   const progressPercentage = goalAmount > 0 ? Math.min((currentAmount / goalAmount) * 100, 100) : 0;
   const isGoalReached = currentAmount >= goalAmount;
+
+  const [displayCurrentAmount, setDisplayCurrentAmount] = useState<string>("Cargando...");
+  const [displayGoalAmount, setDisplayGoalAmount] = useState<string>("Cargando...");
+
+  useEffect(() => {
+    // These will only run on the client, after initial hydration
+    setDisplayCurrentAmount(currentAmount.toLocaleString());
+    setDisplayGoalAmount(goalAmount.toLocaleString());
+  }, [currentAmount, goalAmount]);
 
   return (
     <Card className="shadow-xl rounded-lg sticky top-24"> {/* Sticky for visibility while scrolling left */}
@@ -61,13 +71,13 @@ const PiggyBankProgress: FC<PiggyBankProgressProps> = ({
           <div>
             <p className="text-sm font-medium text-muted-foreground">Hemos Ahorrado</p>
             <p className="text-lg font-semibold text-foreground">
-              {currencySymbol}{currentAmount.toLocaleString()}
+              {currencySymbol}{displayCurrentAmount}
             </p>
           </div>
           <div>
             <p className="text-sm font-medium text-muted-foreground">Nuestra Meta</p>
             <p className="text-lg font-semibold text-foreground">
-              {currencySymbol}{goalAmount.toLocaleString()}
+              {currencySymbol}{displayGoalAmount}
             </p>
           </div>
         </div>
@@ -85,5 +95,3 @@ const PiggyBankProgress: FC<PiggyBankProgressProps> = ({
 };
 
 export default PiggyBankProgress;
-
-    
