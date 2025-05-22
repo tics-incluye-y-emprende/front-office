@@ -4,7 +4,7 @@
 import type { FC } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { HeartHandshake, Home, Info, Gift, Menu, X, UserPlus } from 'lucide-react'; // Added UserPlus
+import { HeartHandshake, Home, Info, Menu, X, UserPlus, HandHelping } from 'lucide-react'; // Added UserPlus, HandHelping
 import { Button } from '@/components/ui/button';
 import { APP_NAME } from '@/lib/constants';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
@@ -14,14 +14,14 @@ interface NavItem {
   href: string;
   label: string;
   icon: FC<React.ComponentProps<typeof Home>>;
-  baseRoute?: string; // Added for more specific active state checking
+  baseRoute?: string;
 }
 
 const navItems: NavItem[] = [
   { href: '/', label: 'Inicio', icon: Home, baseRoute: '/' },
   { href: '/about', label: 'Nosotros', icon: Info, baseRoute: '/about' },
-  { href: '/unete/voluntario', label: 'Únete', icon: UserPlus, baseRoute: '/unete' }, // Default to voluntario, base is /unete
-  { href: '/donate', label: 'Donar', icon: Gift, baseRoute: '/donate' },
+  { href: '/unete/voluntario', label: 'Únete', icon: UserPlus, baseRoute: '/unete' },
+  { href: '/apoya/donaciones', label: 'Apoya', icon: HandHelping, baseRoute: '/apoya' }, // Changed from Donar to Apoya
 ];
 
 const Header: FC = () => {
@@ -35,16 +35,16 @@ const Header: FC = () => {
 
 
   const NavLinks: FC<{ isMobile?: boolean }> = ({ isMobile = false }) => (
-    <nav className={`flex ${isMobile ? 'flex-col space-y-2 p-4' : 'space-x-2 md:space-x-4 items-center'}`}>
+    <nav className={`flex ${isMobile ? 'flex-col space-y-2 p-4' : 'space-x-1 md:space-x-2 items-center'}`}>
       {navItems.map((item) => {
         let isActive = false;
         if (item.baseRoute) {
-          if (item.baseRoute === '/') { // Special case for home
+          if (item.baseRoute === '/') { 
             isActive = pathname === '/';
           } else {
             isActive = pathname.startsWith(item.baseRoute);
           }
-        } else { // Fallback if baseRoute is not defined
+        } else { 
           isActive = pathname === item.href;
         }
         
@@ -53,10 +53,11 @@ const Header: FC = () => {
             key={item.href}
             variant={isActive ? 'default' : 'ghost'}
             asChild
-            className={`text-sm font-medium transition-colors hover:text-primary ${isMobile ? 'w-full justify-start' : ''}`}
+            size="sm"
+            className={`text-xs sm:text-sm font-medium transition-colors hover:text-primary ${isMobile ? 'w-full justify-start' : ''}`}
             onClick={() => isMobile && setIsMobileMenuOpen(false)}
           >
-            <Link href={item.href} className="flex items-center gap-2">
+            <Link href={item.href} className="flex items-center gap-1 sm:gap-2">
               <item.icon className="h-4 w-4" />
               {item.label}
             </Link>
@@ -72,14 +73,15 @@ const Header: FC = () => {
         <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex items-center gap-2 text-lg font-semibold">
             <HeartHandshake className="h-7 w-7 text-primary" />
-            <span className="text-foreground">{APP_NAME}</span>
+            <span className="text-foreground hidden sm:inline-block">{APP_NAME}</span>
+             <span className="text-foreground sm:hidden">CS</span> {/* Short name for mobile */}
           </Link>
           <div className="h-8 w-24 animate-pulse rounded-md bg-muted/50 md:hidden"></div> {/* Placeholder for menu button */}
-          <div className="hidden md:flex space-x-4">
-             <div className="h-8 w-20 animate-pulse rounded-md bg-muted/50"></div> {/* Placeholder for nav links */}
-             <div className="h-8 w-20 animate-pulse rounded-md bg-muted/50"></div>
-             <div className="h-8 w-20 animate-pulse rounded-md bg-muted/50"></div>
-             <div className="h-8 w-20 animate-pulse rounded-md bg-muted/50"></div>
+          <div className="hidden md:flex space-x-2">
+             <div className="h-8 w-16 animate-pulse rounded-md bg-muted/50"></div> {/* Placeholder for nav links */}
+             <div className="h-8 w-16 animate-pulse rounded-md bg-muted/50"></div>
+             <div className="h-8 w-16 animate-pulse rounded-md bg-muted/50"></div>
+             <div className="h-8 w-16 animate-pulse rounded-md bg-muted/50"></div>
           </div>
         </div>
       </header>
@@ -92,7 +94,8 @@ const Header: FC = () => {
       <div className="container mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 text-lg font-semibold" onClick={() => setIsMobileMenuOpen(false)}>
           <HeartHandshake className="h-7 w-7 text-primary" />
-          <span className="text-foreground">{APP_NAME}</span>
+           <span className="text-foreground hidden sm:inline-block">{APP_NAME}</span>
+           <span className="text-foreground sm:hidden">CS</span> {/* Short name for mobile */}
         </Link>
 
         <div className="hidden md:flex">
@@ -130,3 +133,5 @@ const Header: FC = () => {
 };
 
 export default Header;
+
+    

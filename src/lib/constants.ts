@@ -59,7 +59,7 @@ export const ABOUT_US_CONTENT = {
   ],
 };
 
-export const DONATE_PAGE_CONTENT = {
+export const DONATE_PAGE_CONTENT = { // This is the old donate page, can be removed or updated later if needed.
   title: "Apoya Nuestra Causa",
   description: "Tu generosidad nos permite continuar con nuestra labor y llegar a más personas. Cada contribución, sin importar el tamaño, hace una gran diferencia.",
   instructions: "Para realizar una donación, por favor contáctanos a través de WhatsApp. Uno de nuestros representantes te guiará en el proceso.",
@@ -109,6 +109,74 @@ export const UNETE_PAGE_CONTENT = {
   },
 };
 
+export const APOYA_PAGE_CONTENT = {
+  title: "Apoya Nuestra Causa",
+  slogan: "Tu contribución impulsa el cambio y la esperanza.",
+  navLinks: [
+    { name: "Apoyar Emprendimientos", href: "/apoya/emprendimiento" },
+    { name: "Hacer una Donación", href: "/apoya/donaciones" },
+  ],
+  emprendimiento: {
+    title: "Catálogo de Emprendimientos",
+    description: "Descubre y apoya los proyectos de emprendedores locales. Tu contribución directa les ayuda a crecer y generar un impacto positivo en la comunidad.",
+    catalog: [
+      { 
+        id: '1', 
+        name: 'Artesanías Creativas "Manos Mágicas"', 
+        description: 'Bisutería y decoración hecha a mano con materiales reciclados. Buscan fondos para comprar más herramientas.', 
+        image: 'https://placehold.co/400x300.png', 
+        imageHint: 'handmade jewelry',
+        goal: 5000,
+        raised: 1200,
+        whatsappMessage: `Hola ${APP_NAME}! Me interesa apoyar el emprendimiento "Manos Mágicas".`
+      },
+      { 
+        id: '2', 
+        name: 'Huerto Orgánico "Siembra Vida"', 
+        description: 'Producción y venta de vegetales orgánicos. Necesitan capital para expandir su sistema de riego.', 
+        image: 'https://placehold.co/400x300.png', 
+        imageHint: 'organic garden',
+        goal: 8000,
+        raised: 3500,
+        whatsappMessage: `Hola ${APP_NAME}! Me interesa apoyar el emprendimiento "Siembra Vida".`
+      },
+      { 
+        id: '3', 
+        name: 'Confecciones "Hilos de Esperanza"', 
+        description: 'Taller de costura que ofrece prendas de vestir y arreglos. Requieren una nueva máquina de coser industrial.', 
+        image: 'https://placehold.co/400x300.png', 
+        imageHint: 'sewing workshop',
+        goal: 6500,
+        raised: 2000,
+        whatsappMessage: `Hola ${APP_NAME}! Me interesa apoyar el emprendimiento "Hilos de Esperanza".`
+      },
+    ],
+  },
+  donaciones: {
+    title: "Realiza tu Donación",
+    description: "Tu generosidad nos permite continuar nuestra labor. Cada contribución, grande o pequeña, marca una diferencia significativa.",
+    fixedAmounts: [
+      { amount: 10000, label: '10.000' }, // Assuming COP or similar currency
+      { amount: 50000, label: '50.000' },
+      { amount: 200000, label: '200.000' },
+    ],
+    currencySymbol: '$', // Example, adjust as needed
+    customAmountText: "Pedir Link para Monto Personalizado",
+    whatsappMessageFixed: (amount: number, currency: string) => `Hola ${APP_NAME}! Quiero hacer una donación de ${currency}${amount.toLocaleString()}.`,
+    whatsappMessageCustom: `Hola ${APP_NAME}! Quisiera hacer una donación con un monto personalizado. ¿Podrían enviarme un link de pago?`,
+  },
+  savings: {
+    title: "Nuestro Ahorro Comunitario",
+    current: 175000, // Example value
+    goal: 500000,     // Example value
+    goalMessage: "¡Con tu ayuda, alcanzaremos la meta y financiaremos más proyectos!",
+    successMessage: "¡Meta alcanzada! Gracias a tu apoyo, seguiremos transformando vidas.",
+    piggyImage: "https://placehold.co/300x250.png",
+    piggyImageHint: "piggy bank illustration"
+  },
+};
+
+
 export const FOOTER_CONTENT = {
   copyright: `© ${new Date().getFullYear()} ${APP_NAME}. Todos los derechos reservados.`,
   socialLinks: [
@@ -117,3 +185,5 @@ export const FOOTER_CONTENT = {
     { name: "Twitter", href: "#", icon: "Twitter" },
   ]
 };
+
+    
