@@ -8,8 +8,8 @@ export const HOME_PAGE_CONTENT = {
   subtitle: "Uniendo corazones, transformando vidas.",
   description: "Somos una organización dedicada a crear un impacto positivo en nuestra comunidad a través de la colaboración y el apoyo mutuo. Descubre cómo puedes ser parte del cambio.",
   cta: {
-    donate: "Haz una Donación",
-    learnMore: "Conócenos Más",
+    join: "Únete", // Changed from donate
+    support: "Apoya", // Changed from learnMore
   },
   features: [
     {

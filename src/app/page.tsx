@@ -29,14 +29,14 @@ export default function HomePage() {
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button size="lg" asChild className="shadow-md hover:shadow-lg transition-shadow">
-              <Link href="/donate">
-                {HOME_PAGE_CONTENT.cta.donate}
+              <Link href="/unete/asociado">
+                {HOME_PAGE_CONTENT.cta.join} 
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
             </Button>
             <Button size="lg" variant="outline" asChild className="shadow-md hover:shadow-lg transition-shadow">
-              <Link href="/about">
-                {HOME_PAGE_CONTENT.cta.learnMore}
+              <Link href="/apoya/emprendimiento">
+                {HOME_PAGE_CONTENT.cta.support}
               </Link>
             </Button>
           </div>
