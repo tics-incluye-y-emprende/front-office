@@ -1,3 +1,4 @@
+
 export const APP_NAME = "Conexión Solidaria";
 
 export const WHATSAPP_PHONE_NUMBER = "1234567890"; // Replace with actual number, e.g., 521XXXXXXXXXX for Mexico
@@ -8,8 +9,8 @@ export const HOME_PAGE_CONTENT = {
   subtitle: "Uniendo corazones, transformando vidas.",
   description: "Somos una organización dedicada a crear un impacto positivo en nuestra comunidad a través de la colaboración y el apoyo mutuo. Descubre cómo puedes ser parte del cambio.",
   cta: {
-    join: "Únete", // Changed from donate
-    support: "Apoya", // Changed from learnMore
+    join: "Únete",
+    support: "Apoya",
   },
   features: [
     {
@@ -64,6 +65,48 @@ export const DONATE_PAGE_CONTENT = {
   instructions: "Para realizar una donación, por favor contáctanos a través de WhatsApp. Uno de nuestros representantes te guiará en el proceso.",
   image: "https://placehold.co/800x500.png",
   imageHint: "donation impact"
+};
+
+export const UNETE_PAGE_CONTENT = {
+  title: "Únete a Nosotros",
+  slogan: "Tu participación es clave para el cambio.",
+  navLinks: [
+    { name: "Ser Voluntario", href: "/unete/voluntario" },
+    { name: "Ser Asociado", href: "/unete/asociado" },
+  ],
+  voluntario: {
+    title: "Sé Voluntario",
+    pageTitle: "Necesitamos Manos Para...",
+    description: "Tu tiempo y talento pueden transformar vidas. Descubre las áreas donde puedes colaborar y el impacto que puedes generar como voluntario en nuestra organización.",
+    image: "https://placehold.co/600x400.png",
+    imageHint: "happy volunteers",
+    roles: [
+      { title: "Apoyo Logístico en Eventos", description: "Ayuda en la organización, montaje y ejecución de nuestros eventos comunitarios y campañas.", image: "https://placehold.co/400x300.png", imageHint: "event logistics" },
+      { title: "Comunicación y Difusión", description: "Colabora creando contenido, gestionando redes sociales y difundiendo nuestras iniciativas.", image: "https://placehold.co/400x300.png", imageHint: "social media marketing" },
+      { title: "Acompañamiento y Mentoría", description: "Comparte tus conocimientos y experiencia brindando apoyo directo a beneficiarios.", image: "https://placehold.co/400x300.png", imageHint: "mentorship guidance" },
+    ],
+    cta: {
+      text: "Quiero ser Voluntario",
+      whatsappMessage: `Hola ${APP_NAME}! Estoy interesado/a en ser voluntario/a.`,
+    }
+  },
+  asociado: {
+    title: "Sé Asociado",
+    pageTitle: "Fortalece Nuestra Red Solidaria",
+    description: "Como asociado, te unes formalmente a nuestra organización, apoyando nuestra misión de manera continua y participando en la toma de decisiones.",
+    benefits: [
+      "Participación con voz y voto en asambleas generales.",
+      "Acceso prioritario e información exclusiva sobre proyectos.",
+      "Reconocimiento como miembro activo de la comunidad.",
+      "Oportunidad de liderar e impulsar nuevas iniciativas.",
+    ],
+    image: "https://placehold.co/600x400.png",
+    imageHint: "community meeting",
+    cta: {
+      text: "Quiero ser Asociado",
+      whatsappMessage: `Hola ${APP_NAME}! Estoy interesado/a en ser asociado/a.`,
+    }
+  },
 };
 
 export const FOOTER_CONTENT = {
