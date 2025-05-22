@@ -1,18 +1,22 @@
 
 import Image from 'next/image';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { UNETE_PAGE_CONTENT, WHATSAPP_PHONE_NUMBER, APP_NAME } from '@/lib/constants';
 import WhatsAppButton from '@/components/whatsapp-button';
-import { HandHeart, Users, Sparkles } from 'lucide-react';
+import { HandHeart, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
+import { getVoluntariadoRoles } from '@/services/voluntariadoService'; // Import the service
+import type { VoluntarioRole } from '@/lib/types'; // Import the type
 
 export const metadata: Metadata = {
   title: `${UNETE_PAGE_CONTENT.voluntario.title} | ${APP_NAME}`,
   description: UNETE_PAGE_CONTENT.voluntario.description,
 };
 
-export default function VoluntarioPage() {
+export default async function VoluntarioPage() {
   const { voluntario } = UNETE_PAGE_CONTENT;
+  const roles = await getVoluntariadoRoles(); // Fetch data using the service
+
   return (
     <div className="space-y-12">
       <section className="grid md:grid-cols-2 gap-10 items-center p-6 bg-secondary/30 rounded-xl shadow-md">
@@ -43,7 +47,7 @@ export default function VoluntarioPage() {
            <p className="mt-3 text-md text-muted-foreground">Encuentra el rol que mejor se adapte a tus habilidades e intereses.</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {voluntario.roles.map((role, index) => (
+          {roles.map((role: VoluntarioRole, index: number) => ( // Use the VoluntarioRole type
             <Card key={index} className="flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden">
               <div className="relative h-52 w-full">
                  <Image src={role.image} alt={role.title} layout="fill" objectFit="cover" data-ai-hint={role.imageHint} />

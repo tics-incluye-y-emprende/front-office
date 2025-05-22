@@ -4,13 +4,14 @@ export const APP_NAME = "Conexión Solidaria";
 export const WHATSAPP_PHONE_NUMBER = "1234567890"; // Replace with actual number, e.g., 521XXXXXXXXXX for Mexico
 export const DONATION_PREFILLED_MESSAGE = "Hola! Estoy interesado/a en hacer una donación para Conexión Solidaria.";
 
-export const HOME_PAGE_CONTENT = {
+// Define HOME_PAGE_CONTENT before using it in metadata
+const HOME_PAGE_CONTENT_DATA = {
   title: "Bienvenido a Conexión Solidaria",
   subtitle: "Uniendo corazones, transformando vidas.",
   description: "Somos una organización dedicada a crear un impacto positivo en nuestra comunidad a través de la colaboración y el apoyo mutuo. Descubre cómo puedes ser parte del cambio.",
   cta: {
-    join: "Únete",
-    support: "Apoya",
+    join: "Únete", // Updated from "Únete como Asociado"
+    support: "Apoya", // Updated from "Apoya Emprendimientos"
   },
   features: [
     {
@@ -36,6 +37,8 @@ export const HOME_PAGE_CONTENT = {
     },
   ],
 };
+export const HOME_PAGE_CONTENT = HOME_PAGE_CONTENT_DATA;
+
 
 export const ABOUT_US_CONTENT = {
   title: "Sobre Nosotros",
@@ -59,7 +62,7 @@ export const ABOUT_US_CONTENT = {
   ],
 };
 
-export const DONATE_PAGE_CONTENT = { // This is the old donate page, can be removed or updated later if needed.
+export const DONATE_PAGE_CONTENT = { 
   title: "Apoya Nuestra Causa",
   description: "Tu generosidad nos permite continuar con nuestra labor y llegar a más personas. Cada contribución, sin importar el tamaño, hace una gran diferencia.",
   instructions: "Para realizar una donación, por favor contáctanos a través de WhatsApp. Uno de nuestros representantes te guiará en el proceso.",
@@ -80,11 +83,7 @@ export const UNETE_PAGE_CONTENT = {
     description: "Tu tiempo y talento pueden transformar vidas. Descubre las áreas donde puedes colaborar y el impacto que puedes generar como voluntario en nuestra organización.",
     image: "https://placehold.co/600x400.png",
     imageHint: "happy volunteers",
-    roles: [
-      { title: "Apoyo Logístico en Eventos", description: "Ayuda en la organización, montaje y ejecución de nuestros eventos comunitarios y campañas.", image: "https://placehold.co/400x300.png", imageHint: "event logistics" },
-      { title: "Comunicación y Difusión", description: "Colabora creando contenido, gestionando redes sociales y difundiendo nuestras iniciativas.", image: "https://placehold.co/400x300.png", imageHint: "social media marketing" },
-      { title: "Acompañamiento y Mentoría", description: "Comparte tus conocimientos y experiencia brindando apoyo directo a beneficiarios.", image: "https://placehold.co/400x300.png", imageHint: "mentorship guidance" },
-    ],
+    // Roles data moved to src/lib/data/voluntariado.ts
     cta: {
       text: "Quiero ser Voluntario",
       whatsappMessage: `Hola ${APP_NAME}! Estoy interesado/a en ser voluntario/a.`,
@@ -119,56 +118,25 @@ export const APOYA_PAGE_CONTENT = {
   emprendimiento: {
     title: "Catálogo de Emprendimientos",
     description: "Descubre y apoya los proyectos de emprendedores locales. Tu contribución directa les ayuda a crecer y generar un impacto positivo en la comunidad.",
-    catalog: [
-      { 
-        id: '1', 
-        name: 'Artesanías Creativas "Manos Mágicas"', 
-        description: 'Bisutería y decoración hecha a mano con materiales reciclados. Buscan fondos para comprar más herramientas.', 
-        image: 'https://placehold.co/400x300.png', 
-        imageHint: 'handmade jewelry',
-        goal: 5000,
-        raised: 1200,
-        whatsappMessage: `Hola ${APP_NAME}! Me interesa apoyar el emprendimiento "Manos Mágicas".`
-      },
-      { 
-        id: '2', 
-        name: 'Huerto Orgánico "Siembra Vida"', 
-        description: 'Producción y venta de vegetales orgánicos. Necesitan capital para expandir su sistema de riego.', 
-        image: 'https://placehold.co/400x300.png', 
-        imageHint: 'organic garden',
-        goal: 8000,
-        raised: 3500,
-        whatsappMessage: `Hola ${APP_NAME}! Me interesa apoyar el emprendimiento "Siembra Vida".`
-      },
-      { 
-        id: '3', 
-        name: 'Confecciones "Hilos de Esperanza"', 
-        description: 'Taller de costura que ofrece prendas de vestir y arreglos. Requieren una nueva máquina de coser industrial.', 
-        image: 'https://placehold.co/400x300.png', 
-        imageHint: 'sewing workshop',
-        goal: 6500,
-        raised: 2000,
-        whatsappMessage: `Hola ${APP_NAME}! Me interesa apoyar el emprendimiento "Hilos de Esperanza".`
-      },
-    ],
+    // Catalog data moved to src/lib/data/emprendimientos.ts
   },
   donaciones: {
     title: "Realiza tu Donación",
     description: "Tu generosidad nos permite continuar nuestra labor. Cada contribución, grande o pequeña, marca una diferencia significativa.",
     fixedAmounts: [
-      { amount: 10000, label: '10.000' }, // Assuming COP or similar currency
+      { amount: 10000, label: '10.000' }, 
       { amount: 50000, label: '50.000' },
       { amount: 200000, label: '200.000' },
     ],
-    currencySymbol: '$', // Example, adjust as needed
+    currencySymbol: '$', 
     customAmountText: "Pedir Link para Monto Personalizado",
     whatsappMessageFixed: (amount: number, currency: string) => `Hola ${APP_NAME}! Quiero hacer una donación de ${currency}${amount.toLocaleString()}.`,
     whatsappMessageCustom: `Hola ${APP_NAME}! Quisiera hacer una donación con un monto personalizado. ¿Podrían enviarme un link de pago?`,
   },
   savings: {
     title: "Nuestro Ahorro Comunitario",
-    current: 175000, // Example value
-    goal: 500000,     // Example value
+    current: 175000, 
+    goal: 500000,     
     goalMessage: "¡Con tu ayuda, alcanzaremos la meta y financiaremos más proyectos!",
     successMessage: "¡Meta alcanzada! Gracias a tu apoyo, seguiremos transformando vidas.",
     piggyImage: "https://placehold.co/300x250.png",
@@ -185,5 +153,3 @@ export const FOOTER_CONTENT = {
     { name: "Twitter", href: "#", icon: "Twitter" },
   ]
 };
-
-    

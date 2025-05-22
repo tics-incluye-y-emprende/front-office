@@ -4,18 +4,20 @@ import { APOYA_PAGE_CONTENT, WHATSAPP_PHONE_NUMBER, APP_NAME } from '@/lib/const
 import PiggyBankProgress from '@/components/piggy-bank-progress';
 import WhatsAppButton from '@/components/whatsapp-button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
-import { Sparkles, ShoppingBag } from 'lucide-react';
+import { ShoppingBag } from 'lucide-react';
 import type { Metadata } from 'next';
+import { getEmprendimientos } from '@/services/emprendimientoService'; // Import the service
+import type { Emprendimiento } from '@/lib/types'; // Import the type
 
 export const metadata: Metadata = {
   title: `Apoyar Emprendimientos | ${APP_NAME}`,
   description: APOYA_PAGE_CONTENT.emprendimiento.description,
 };
 
-export default function EmprendimientoPage() {
+export default async function EmprendimientoPage() {
   const { emprendimiento, savings } = APOYA_PAGE_CONTENT;
+  const emprendimientos = await getEmprendimientos(); // Fetch data using the service
 
   return (
     <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
@@ -32,8 +34,8 @@ export default function EmprendimientoPage() {
         </header>
 
         <div className="space-y-6 overflow-y-auto md:max-h-[calc(100vh-300px)] pr-2 pb-6">
-          {emprendimiento.catalog.length > 0 ? (
-            emprendimiento.catalog.map((item) => {
+          {emprendimientos.length > 0 ? (
+            emprendimientos.map((item: Emprendimiento) => { // Use the Emprendimiento type
               const progress = item.goal > 0 ? (item.raised / item.goal) * 100 : 0;
               return (
               <Card key={item.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg overflow-hidden">
@@ -91,5 +93,3 @@ export default function EmprendimientoPage() {
     </div>
   );
 }
-
-    
