@@ -14,9 +14,9 @@ body {
     --card-foreground: 30 20% 25%; /* Dark Brown */
     --popover: 30 50% 100%; /* White */
     --popover-foreground: 30 20% 25%; /* Dark Brown */
-    --primary: 180 40% 35%; /* Teal */
+    --primary: 200 87% 45%; /* #0f9bd8 (Blue) */
     --primary-foreground: 30 50% 98%; /* Light Beige */
-    --secondary: 30 60% 92%; /* Lighter Beige */
+    --secondary: 200 87% 45%; /* #0f9bd8 (Blue) */
     --secondary-foreground: 180 40% 35%; /* Teal */
     --muted: 30 40% 88%; /* Muted Beige */
     --muted-foreground: 30 20% 45%; /* Medium Grayish Brown */
@@ -38,9 +38,9 @@ body {
     --sidebar-background: 30 30% 94%; /* Slightly darker beige */
     --sidebar-foreground: 30 20% 25%; /* Dark Brown */
     --sidebar-primary: 180 40% 35%; /* Teal */
-    --sidebar-primary-foreground: 30 50% 98%; /* Light Beige */
+    --sidebar-primary-foreground: 200 87% 45%; /* #0f9bd8 (Blue) */
     --sidebar-accent: 25 85% 60%; /* Warm Orange */
-    --sidebar-accent-foreground: 30 50% 98%; /* Light Beige */
+    --sidebar-accent-foreground: 200 87% 45%; /* #0f9bd8 (Blue) */
     --sidebar-border: 30 30% 80%;
     --sidebar-ring: 180 40% 45%; /* Teal */
   }
@@ -53,9 +53,9 @@ body {
     --card-foreground: 30 30% 90%;
     --popover: 30 10% 12%;
     --popover-foreground: 30 30% 90%;
-    --primary: 180 40% 55%; /* Lighter Teal for dark mode */
+    --primary: 200 70% 65%; /* Lighter #0f9bd8 for dark mode */
     --primary-foreground: 30 10% 10%;
-    --secondary: 30 15% 20%; /* Darker Beige-Gray */
+    --secondary: 200 70% 65%; /* Lighter #0f9bd8 for dark mode */
     --secondary-foreground: 180 40% 55%;
     --muted: 30 15% 25%;
     --muted-foreground: 30 30% 70%;
@@ -74,9 +74,9 @@ body {
 
     --sidebar-background: 30 10% 15%;
     --sidebar-foreground: 30 30% 90%;
-    --sidebar-primary: 180 40% 55%;
+    --sidebar-primary: 200 70% 65%;
     --sidebar-primary-foreground: 30 10% 10%;
-    --sidebar-accent: 25 75% 65%;
+    --sidebar-accent: 200 70% 65%;
     --sidebar-accent-foreground: 30 10% 10%;
     --sidebar-border: 30 15% 25%;
     --sidebar-ring: 180 40% 55%;
