@@ -2,14 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { HOME_PAGE_CONTENT, APP_NAME } from "@/lib/constants";
-import { ArrowRight, Users, Heart, Handshake } from "lucide-react";
+import { HOME_PAGE_CONTENT } from "@/lib/constants";
+import { ArrowRight, Users, Heart, Handshake, DollarSign } from "lucide-react";
 import type { FC } from "react";
 
 const iconMap: { [key: string]: FC<React.ComponentProps<typeof Users>> } = {
   Users,
   Heart,
   Handshake,
+  DollarSign,
 };
 
 export default function HomePage() {
@@ -59,7 +60,8 @@ export default function HomePage() {
             ¿Cómo Ayudamos?
           </h2>
           <p className="mt-4 text-lg text-muted-foreground">
-            Descubre las formas en que generamos un impacto positivo.
+            Con estas {HOME_PAGE_CONTENT.features.length} líneas estratégicas
+            buscamos generar un impacto positivo.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
@@ -68,7 +70,7 @@ export default function HomePage() {
             return (
               <Card
                 key={feature.title}
-                className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg"
+                className="border-none overflow-hidden bg-transparent shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-lg"
               >
                 <div className="relative h-56 w-full">
                   <Image

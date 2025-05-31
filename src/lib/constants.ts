@@ -6,36 +6,49 @@ export const DONATION_PREFILLED_MESSAGE =
 
 // Define HOME_PAGE_CONTENT before using it in metadata
 const HOME_PAGE_CONTENT_DATA = {
-  title: "Bienvenido a Asosiación Incluye y Emprende",
-  subtitle: "Uniendo corazones, transformando vidas.",
+  title: "Asosiación Incluye y Emprende",
+  subtitle: "Creando oportunidades, transformando vidas",
   description:
-    "Somos una organización dedicada a crear un impacto positivo en nuestra comunidad a través de la colaboración y el apoyo mutuo. Descubre cómo puedes ser parte del cambio.",
+    "La asociación incluye y emprende acompaña y apoya a las personas en condición de discapacidad cognitiva y mental en el fortalecimiento de habilidades diversas para lograr mayor autonomía  y mejorar su calidad de vida.",
   cta: {
-    join: "Únete", // Updated from "Únete como Asociado"
-    support: "Apoya", // Updated from "Apoya Emprendimientos"
+    join: "Únete: Voluntario o asociado",
+    support: "Apoya: Emprendimiento o donación ",
   },
   features: [
     {
-      title: "Proyectos Comunitarios",
+      title: "Psicopedagogía",
       description:
-        "Impulsamos iniciativas locales que generan desarrollo y bienestar.",
+        "Acompañamos el desarrollo físico, psico-educativo y artístico de los beneficiarios mediante el trabajo interdisciplinar.",
       icon: "Users",
-      image: "https://placehold.co/600x400.png",
+      image:
+        "https://yodkoojlgixgkrwndgfy.supabase.co/storage/v1/object/public/front-office//psico-pedagogia.png",
       imageHint: "community project",
     },
     {
-      title: "Apoyo Directo",
-      description: "Brindamos ayuda tangible a quienes más lo necesitan.",
+      title: "Emprendimiento",
+      description:
+        "Formamos un emprendimiento entre todas las familias y apoyamos los emprendimientos familiares ",
       icon: "Heart",
-      image: "https://placehold.co/600x400.png",
+      image:
+        "https://yodkoojlgixgkrwndgfy.supabase.co/storage/v1/object/public/front-office//emprende.png",
       imageHint: "helping hands",
     },
     {
-      title: "Voluntariado",
+      title: "Orientación vocacional",
       description:
-        "Únete a nuestro equipo de voluntarios y marca la diferencia.",
+        "Reconocemos las habilidades y competencias individuales para enfocar cada proyecto de vida.",
       icon: "Handshake",
-      image: "https://placehold.co/600x400.png",
+      image:
+        "https://yodkoojlgixgkrwndgfy.supabase.co/storage/v1/object/public/front-office//orientacion-vocacional.png",
+      imageHint: "volunteers group",
+    },
+    {
+      title: "Gestión de recursos",
+      description:
+        "Colaboramos para la sostenibilidad de la organización con la gestión de recursos humanos, económicos y físicos.",
+      icon: "DollarSign",
+      image:
+        "https://yodkoojlgixgkrwndgfy.supabase.co/storage/v1/object/public/front-office//sostenibilidad.png",
       imageHint: "volunteers group",
     },
   ],
@@ -46,36 +59,31 @@ export const ABOUT_US_CONTENT = {
   title: "Sobre Nosotros",
   mission: {
     title: "Nuestra Misión",
-    text: "Conectar a personas con oportunidades de ayudar y ser ayudadas, fomentando una cultura de solidaridad y cooperación para construir una sociedad más justa y equitativa.",
+    text: "La asociación incluye y emprende busca mejorar la calidad de vida de las personas en condición de discapacidad cognitiva y mental y sus cuidadores mediante su desarrollo individual integral, brindando acompañamiento desde la educación informal, orientación vocacional, emprendimiento y empleabilidad.",
     image: "https://placehold.co/600x400.png",
     imageHint: "teamwork collaboration",
   },
   vision: {
     title: "Nuestra Visión",
-    text: "Ser un referente en la creación de redes de apoyo solidario, donde cada individuo tenga la oportunidad de alcanzar su máximo potencial y contribuir al bienestar colectivo.",
+    text: "l 2029 las personas en condición de discapacidad cognitiva y mental y sus cuidadores en la localidad de Suba encontrarán en la ASOCIACIÓN INCLUYE Y EMPRENDE un centro integral para el desarrollo de proyectos de emprendimiento y MiPymes.",
     image: "https://placehold.co/600x400.png",
     imageHint: "community growth",
   },
   values: [
     {
-      name: "Solidaridad",
+      name: "Inclusión",
       description:
-        "Actuamos con empatía y compromiso hacia las necesidades de los demás.",
+        "Que las personas en condición de discapacidad y sus cuidadores puedan desarrollar su vida en cualquier contexto.",
     },
     {
-      name: "Transparencia",
+      name: "Responsabilidad",
       description:
-        "Gestionamos nuestros recursos y acciones con honestidad y claridad.",
+        "Ejecución de los programas sociales con el compromiso institucional y corporativo de contribuir a la defensa de los derechos humanos de la población.",
     },
     {
-      name: "Colaboración",
+      name: "Unidad",
       description:
-        "Creemos en el poder de trabajar juntos para lograr un mayor impacto.",
-    },
-    {
-      name: "Respeto",
-      description:
-        "Valoramos la diversidad y la dignidad de todas las personas.",
+        "Credibilidad en el trabajo en equipo potencializando la sinergia entre profesionales y beneficiarios.",
     },
   ],
 };
