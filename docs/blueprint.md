@@ -1,10 +1,10 @@
-# **App Name**: Conexión Solidaria
+# **App Name**: Asosiación Incluye y Emprende
 
 ## Core Features:
 
 - Adaptive Header: Header navigation that adapts based on the current route. With a logo that redirects to the homepage. Buttons in the header should change based on the route.
 - Dynamic Content Rendering: Content display that changes based on route. Static content is fetched from constants in the source code and displayed.
-- WhatsApp Integration: Integration with WhatsApp for payment processing.  Buttons will redirect to a WhatsApp link for handling payments.
+- WhatsApp Integration: Integration with WhatsApp for payment processing. Buttons will redirect to a WhatsApp link for handling payments.
 - Consistent Visual Theme: Visual consistency that maintains a uniform brand identity, based on social media posts. The site reflects the graphical style of the organization.
 
 ## Style Guidelines:

@@ -17,7 +17,7 @@ export default function HomePage() {
     <div className="space-y-12 md:space-y-16">
       {/* Hero Section */}
       <section className="text-center py-12 md:py-20 bg-gradient-to-br from-primary/10 via-background to-background rounded-xl shadow-lg">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-8">
           <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-5xl md:text-6xl">
             {HOME_PAGE_CONTENT.title}
           </h1>
